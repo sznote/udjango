@@ -5,7 +5,7 @@ from .models import Join
 # Register your models here.
 
 class JoinAdmin(admin.ModelAdmin):
-    list_display = ['__unicode__','email','ip_address','timestamp','updated']
+    list_display = ['__unicode__','email','ip_address','timestamp','updated','ref_id']
     class Meta:
         model = Join
 

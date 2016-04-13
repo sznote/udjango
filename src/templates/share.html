@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block style %}
+<style>
+      body {
+        padding-top: 50px;
+        padding-bottom: 0px;
+     }
+
+    .jumbotron {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    color: inherit;
+    background-color: rgba(47, 86, 144, 0.41);
+     }
+
+</style>
+{% endblock %}
+
+{% block jumbotron %}
+{{ block.super }}
+{% endblock %}
+
+{% block  content %}
+
+ {{ ref_id }}
+
+{% endblock %}
