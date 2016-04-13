@@ -34,7 +34,7 @@ def get_ip(request):
 
 def share(request,ref_id):
 
-    print ref_id
+    #print ref_id
     context = {
         "ref_id": ref_id,
     }
@@ -42,6 +42,17 @@ def share(request,ref_id):
 
 
 def home(request):
+
+    try:
+        refer_id = request.session['ref']
+        obj = Join.objects.get(id=refer_id)
+    except:
+        refer_id = None
+        obj = None
+
+    print "Refer id is: %s %s" % (refer_id, obj)
+
+
     #   print settings.BASE_DIR
 
     # This is  using  regular django forms
