@@ -24,7 +24,7 @@ SECRET_KEY = 'ijf-$3hh01%t^xrzh#qv6$q%_0kxm^pskg5c7%64@8g)h$k7$('
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+#DEBUG = False
 ALLOWED_HOSTS = []
 
 
@@ -98,7 +98,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+SHARE_URL = "http://sznote.com/?ref="
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 

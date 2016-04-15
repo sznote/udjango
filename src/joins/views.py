@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponseRedirect
+from django.shortcuts import render, HttpResponseRedirect, Http404
 from django.conf import settings
 from .forms import EmailForm, JoinForm
 from .models import Join
@@ -34,11 +34,24 @@ def get_ip(request):
 
 def share(request,ref_id):
 
-    #print ref_id
-    context = {
-        "ref_id": ref_id,
-    }
-    return render(request, "share.html", context)
+    # print ref_id
+
+    try:
+        join_obj = Join.objects.get(ref_id=ref_id)
+        friends_referred = Join.objects.filter(friends=join_obj)
+        count = join_obj.referral.all().count()
+        ref_url =  settings.SHARE_URL + str( join_obj.ref_id )
+        context = {
+        "ref_id": join_obj.ref_id,
+        "count": count,
+        "ref_url": ref_url,
+        }
+        return render(request, "share.html", context)
+
+    #except Join.DoesNoExist:
+    #    raise Http404
+    except:
+        raise  Http404
 
 
 def home(request):
