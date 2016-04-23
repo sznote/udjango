@@ -65,9 +65,9 @@ def home(request):
 
     print "Refer id is: %s %s" % (refer_id, obj)
 
-
-    #   print settings.BASE_DIR
-
+    print settings.MEDIA_ROOT
+    print settings.STATICFILES_DIRS
+    print settings.BASE_DIR
     # This is  using  regular django forms
 
     # form = EmailForm(request.POST or None)

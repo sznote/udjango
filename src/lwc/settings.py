@@ -104,11 +104,12 @@ SHARE_URL = "http://sznote.com/?ref="
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR,"static-root")
+#STATIC_ROOT = os.path.join(BASE_DIR,"static-root")
+STATIC_ROOT = os.path.join(BASE_DIR,"static","static-root")
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR,"static-files"),
+    os.path.join(BASE_DIR,"static","static-files"),
 )
 
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR),"static","static_dirs")
+MEDIA_ROOT = os.path.join(BASE_DIR,"static","media")
 MEDIA_URL = '/media/'
